@@ -1,0 +1,211 @@
+/*Általános*/
+	body{
+		font-size: 16px;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 300;
+		display:grid;
+			grid-template-areas: 
+				"fejlec"
+				"foresz"
+				"lablec";
+			grid-template-rows: max-content 1fr max-content;
+			min-height: 100vh;
+		background-color: #f0e4e7;
+	}
+
+	*, *::before, *::after{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	header{
+		grid-area:fejlec;
+	}
+	main{
+		grid-area: foresz;
+	}
+	footer{
+		grid-area: lablec;
+	}
+
+	img{
+		max-width:100%;
+	}
+
+/*Közös fejléc*/
+	header a{
+		text-decoration: none;
+	}
+	header span{
+		color: #f3dee3;
+		font-family: 'Oregano', cursive;
+		font-size: 25px;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		border-right: 2px solid #f3dee3;
+	}
+	.vonal_nelkul span{
+		border:none;
+	}
+	header span:hover{
+		color: #debfbf;
+	}
+	header{
+		background-color: #2e284c;
+	}
+	.fejlec_menu{
+		background-color: #7f2f55;
+		line-height: 2.5rem;
+		text-align:center;
+	}
+	.fejlec_menu a{
+		display:inline-block;
+	}
+	.fejlec_logo{
+		text-align: center;
+	}
+
+/*Közös lábléc*/
+	footer{
+		padding: .5rem;
+		background-color: #7f2f55;
+	}
+
+/*Home oldal*/
+	#kezdolap{
+		text-align: center;
+		display:grid;
+		grid-template-rows: minmax(1rem,1fr) max-content minmax(1rem,1fr);
+		grid-template-columns: minmax(1rem,1fr) minmax(300px, 700px) minmax(1rem,1fr);
+	}
+	.menu a{
+		display:inline-block;
+		text-decoration: none;
+		padding-right: 1.5rem;
+		padding-left: 1.5rem;
+		color:#94591c;
+	}
+	.menu{
+		font-family: 'Oregano', cursive;
+		font-size: 1.8rem;
+	}
+	.menu span:hover{
+		text-shadow:0 0 3px white, 0 0 7px #f8b26a;
+	}
+	.felirat{
+		font-size:3.5rem;
+		font-family: 'Open Sans Condensed', sans-serif;
+		color: #94591c;
+		padding-bottom: 7rem;
+	}
+	.kozepre{
+		grid-column:2/3;
+		grid-row:2/3;
+	}
+	.kezdolap_logo{
+		width:500px;
+		min-width: 280px;
+	}
+/*Közös elemek*/
+	main{
+		display:grid;
+		grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 850px) minmax(1rem, 1fr);
+	}
+	main div{
+		grid-column:2/3;
+	}
+	main div.szoveges{
+		background-color: white;
+		text-align:justify;
+	}
+	p{
+		margin:6px;
+	}
+	.kiemelt{
+		font-size: 1.5rem;
+		color: #a97777;
+		margin-bottom: 12px;
+		font-weight: bold;
+	}
+/*About oldal*/
+	.magamrol img{
+		display:inline;
+		float: left;
+		margin-right: .75rem;
+		margin-bottom: .5rem;
+		max-height: 20rem;
+		border: 10px solid #a97777;
+	}
+	main div.magamrol{
+		padding: 17%;
+	}
+/*Gallery oldal*/
+	main div.galeria{
+		padding: 3%;
+	}
+	.kartya{
+		display:inline-block;
+		height: 20rem;
+		max-width: max-content;
+		background-color: #d5a49d;
+		border: 5px solid white;
+		margin: .5rem;
+		text-align: center;
+	}
+	.kartya:nth-child(even){
+		background-color: #debfbf;
+	}
+	.kartya:hover{
+		-webkit-box-shadow: 0px 0px 10px 0px #a98686; 
+			-moz-box-shadow: 0px 0px 10px 0px #a98686;
+			box-shadow: 0px 0px 10px 0px #a98686;
+	}
+	.kartya img{
+		margin:.5rem;
+		height: 18.5rem;
+	}
+/*Plans oldal*/
+	main div.tervek{
+		padding: 3%;
+	}
+	.tervek a{
+		text-decoration: none;
+	}
+	.tervek span{
+		color: #c2556f;
+		font-size: 18px;
+	}
+	.tervek img{
+		margin: .5rem;
+		border: 10px solid #a97777;
+	}
+	.kep_balra{
+		float: left;
+		max-width: 15rem;
+	}
+	.kep_jobbra{
+		float: right;
+		max-width: 15rem;
+	}
+	.tervek .egymas_ala{
+		position: relative;
+		overflow:hidden;
+		display: block;
+	}
+	.tervek .egymas_ala img{
+		margin:.5rem;
+		max-width: 1fr;
+		border:none;
+	}
+	.egymas_ala p{
+		position: absolute;
+		bottom: -100%;
+		width: 100%;
+		text-align: center;
+		background-color: rgba(196,204,215,.7);
+		transition: .3s;
+	}
+	.egymas_ala:hover p{
+		bottom: 0;
+	}
